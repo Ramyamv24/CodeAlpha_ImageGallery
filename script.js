@@ -113,7 +113,7 @@ const galleryData = [
   }
 ];
 
-// Cache the DOM nodes used throughout the app.
+
 const dom = {
   grid: document.querySelector("#gallery-grid"),
   filters: document.querySelectorAll(".filter-button"),
@@ -135,7 +135,7 @@ const dom = {
   lightboxCounter: document.querySelector("#lightbox-counter")
 };
 
-// Centralized state keeps filtering, search, favorites, and lightbox navigation predictable.
+
 const state = {
   items: [...galleryData],
   filteredItems: [...galleryData],
@@ -145,7 +145,7 @@ const state = {
   favorites: loadFavorites()
 };
 
-// Inline SVG icons keep the project dependency-free and avoid font/icon packages.
+
 const icons = {
   moon: '<svg viewBox="0 0 24 24" role="img"><path d="M21 13.1A8.5 8.5 0 0 1 10.9 3a7 7 0 1 0 10.1 10.1Z"></path></svg>',
   sun: '<svg viewBox="0 0 24 24" role="img"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>',
@@ -164,7 +164,7 @@ function saveFavorites() {
   localStorage.setItem("modern-gallery-favorites", JSON.stringify(state.favorites));
 }
 
-// Apply both the active category and the search query to the current image order.
+
 function filterItems() {
   const query = state.searchTerm.trim().toLowerCase();
 
@@ -175,7 +175,7 @@ function filterItems() {
   });
 }
 
-// Build cards from the data array so the HTML stays clean and the gallery is easy to extend.
+
 function renderGallery() {
   filterItems();
   dom.grid.innerHTML = "";
@@ -244,7 +244,7 @@ function shuffleGallery() {
   renderGallery();
 }
 
-// The lightbox navigates only through the currently visible filtered set.
+
 function openLightbox(index) {
   if (!state.filteredItems.length) return;
 
@@ -259,7 +259,7 @@ function closeLightbox() {
   document.body.style.overflow = "";
 }
 
-// Reapply the image animation when moving between lightbox slides.
+
 function updateLightbox() {
   const item = state.filteredItems[state.currentIndex];
   dom.lightboxImage.style.animation = "none";
@@ -292,7 +292,7 @@ function downloadCurrentImage() {
   link.click();
 }
 
-// Persist the selected color mode between visits.
+
 function toggleTheme() {
   const html = document.documentElement;
   const nextTheme = html.dataset.theme === "dark" ? "light" : "dark";
@@ -307,7 +307,6 @@ function applySavedTheme() {
   dom.themeIcon.innerHTML = savedTheme === "dark" ? icons.sun : icons.moon;
 }
 
-// Event wiring.
 dom.filters.forEach((button) => {
   button.addEventListener("click", () => setFilter(button.dataset.filter));
 });

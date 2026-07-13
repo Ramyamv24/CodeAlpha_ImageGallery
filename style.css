@@ -120,8 +120,8 @@ h1 {
   border: 1px solid var(--border);
   background: var(--surface);
   box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
 }
 
 .image-count {
@@ -334,8 +334,8 @@ h1 {
   padding: 5px 10px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -359,8 +359,8 @@ h1 {
   border-radius: 50%;
   color: #fff;
   background: rgba(16, 14, 24, 0.34);
-  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   transition: transform var(--speed), background var(--speed), color var(--speed);
 }
 
@@ -423,8 +423,9 @@ h1 {
   inset: 0;
   border: 0;
   background: rgba(10, 8, 15, 0.88);
-  backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+ 
 }
 
 .lightbox-panel {
@@ -456,8 +457,9 @@ h1 {
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: #fff;
   background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  
 }
 
 .lightbox-counter {
